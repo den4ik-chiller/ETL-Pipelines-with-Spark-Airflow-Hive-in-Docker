@@ -1,0 +1,258 @@
+[2024-09-13T13:40:28.334+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-13T13:40:28.375+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: spark_find_makers_dag.spark_submit_task scheduled__2024-09-12T00:00:00+00:00 [queued]>
+[2024-09-13T13:40:28.391+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: spark_find_makers_dag.spark_submit_task scheduled__2024-09-12T00:00:00+00:00 [queued]>
+[2024-09-13T13:40:28.392+0000] {taskinstance.py:2865} INFO - Starting attempt 7 of 10
+[2024-09-13T13:40:28.420+0000] {taskinstance.py:2888} INFO - Executing <Task(SparkSubmitOperator): spark_submit_task> on 2024-09-12 00:00:00+00:00
+[2024-09-13T13:40:28.433+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'spark_find_makers_dag', 'spark_submit_task', 'scheduled__2024-09-12T00:00:00+00:00', '--job-id', '645', '--raw', '--subdir', 'DAGS_FOLDER/spark_sql_dag.py', '--cfg-path', '/tmp/tmpeik5kwyz']
+[2024-09-13T13:40:28.436+0000] {standard_task_runner.py:105} INFO - Job 645: Subtask spark_submit_task
+[2024-09-13T13:40:28.439+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=1674) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-13T13:40:28.441+0000] {standard_task_runner.py:72} INFO - Started process 1681 to run task
+[2024-09-13T13:40:28.529+0000] {task_command.py:467} INFO - Running <TaskInstance: spark_find_makers_dag.spark_submit_task scheduled__2024-09-12T00:00:00+00:00 [running]> on host abca638f616d
+[2024-09-13T13:40:28.722+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Denis' AIRFLOW_CTX_DAG_ID='spark_find_makers_dag' AIRFLOW_CTX_TASK_ID='spark_submit_task' AIRFLOW_CTX_EXECUTION_DATE='2024-09-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='7' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-09-12T00:00:00+00:00'
+[2024-09-13T13:40:28.726+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-13T13:40:28.812+0000] {base.py:84} INFO - Retrieving connection 'spark_default'
+[2024-09-13T13:40:28.816+0000] {spark_submit.py:403} INFO - Spark-Submit cmd: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --name arrow-spark --verbose --deploy-mode client /opt/***/dags/spark_job.py
+[2024-09-13T13:40:33.839+0000] {spark_submit.py:579} INFO - Using properties file: null
+[2024-09-13T13:40:34.297+0000] {spark_submit.py:579} INFO - Parsed arguments:
+[2024-09-13T13:40:34.299+0000] {spark_submit.py:579} INFO - master                  spark://spark-master:7077
+[2024-09-13T13:40:34.300+0000] {spark_submit.py:579} INFO - remote                  null
+[2024-09-13T13:40:34.301+0000] {spark_submit.py:579} INFO - deployMode              client
+[2024-09-13T13:40:34.302+0000] {spark_submit.py:579} INFO - executorMemory          null
+[2024-09-13T13:40:34.303+0000] {spark_submit.py:579} INFO - executorCores           null
+[2024-09-13T13:40:34.305+0000] {spark_submit.py:579} INFO - totalExecutorCores      null
+[2024-09-13T13:40:34.306+0000] {spark_submit.py:579} INFO - propertiesFile          null
+[2024-09-13T13:40:34.307+0000] {spark_submit.py:579} INFO - driverMemory            null
+[2024-09-13T13:40:34.309+0000] {spark_submit.py:579} INFO - driverCores             null
+[2024-09-13T13:40:34.310+0000] {spark_submit.py:579} INFO - driverExtraClassPath    null
+[2024-09-13T13:40:34.311+0000] {spark_submit.py:579} INFO - driverExtraLibraryPath  null
+[2024-09-13T13:40:34.312+0000] {spark_submit.py:579} INFO - driverExtraJavaOptions  null
+[2024-09-13T13:40:34.313+0000] {spark_submit.py:579} INFO - supervise               false
+[2024-09-13T13:40:34.314+0000] {spark_submit.py:579} INFO - queue                   null
+[2024-09-13T13:40:34.315+0000] {spark_submit.py:579} INFO - numExecutors            null
+[2024-09-13T13:40:34.316+0000] {spark_submit.py:579} INFO - files                   null
+[2024-09-13T13:40:34.317+0000] {spark_submit.py:579} INFO - pyFiles                 null
+[2024-09-13T13:40:34.318+0000] {spark_submit.py:579} INFO - archives                null
+[2024-09-13T13:40:34.319+0000] {spark_submit.py:579} INFO - mainClass               null
+[2024-09-13T13:40:34.321+0000] {spark_submit.py:579} INFO - primaryResource         file:/opt/***/dags/spark_job.py
+[2024-09-13T13:40:34.322+0000] {spark_submit.py:579} INFO - name                    arrow-spark
+[2024-09-13T13:40:34.324+0000] {spark_submit.py:579} INFO - childArgs               []
+[2024-09-13T13:40:34.325+0000] {spark_submit.py:579} INFO - jars                    null
+[2024-09-13T13:40:34.327+0000] {spark_submit.py:579} INFO - packages                null
+[2024-09-13T13:40:34.328+0000] {spark_submit.py:579} INFO - packagesExclusions      null
+[2024-09-13T13:40:34.329+0000] {spark_submit.py:579} INFO - repositories            null
+[2024-09-13T13:40:34.330+0000] {spark_submit.py:579} INFO - verbose                 true
+[2024-09-13T13:40:34.331+0000] {spark_submit.py:579} INFO - 
+[2024-09-13T13:40:34.332+0000] {spark_submit.py:579} INFO - Spark properties used, including those specified through
+[2024-09-13T13:40:34.334+0000] {spark_submit.py:579} INFO - --conf and those from the properties file null:
+[2024-09-13T13:40:34.335+0000] {spark_submit.py:579} INFO - (spark.master,spark://spark-master:7077)
+[2024-09-13T13:40:34.336+0000] {spark_submit.py:579} INFO - 
+[2024-09-13T13:40:34.337+0000] {spark_submit.py:579} INFO - 
+[2024-09-13T13:40:35.096+0000] {spark_submit.py:579} INFO - Main class:
+[2024-09-13T13:40:35.098+0000] {spark_submit.py:579} INFO - org.apache.spark.deploy.PythonRunner
+[2024-09-13T13:40:35.099+0000] {spark_submit.py:579} INFO - Arguments:
+[2024-09-13T13:40:35.100+0000] {spark_submit.py:579} INFO - file:/opt/***/dags/spark_job.py
+[2024-09-13T13:40:35.101+0000] {spark_submit.py:579} INFO - null
+[2024-09-13T13:40:35.106+0000] {spark_submit.py:579} INFO - Spark config:
+[2024-09-13T13:40:35.107+0000] {spark_submit.py:579} INFO - (spark.app.name,arrow-spark)
+[2024-09-13T13:40:35.108+0000] {spark_submit.py:579} INFO - (spark.app.submitTime,1726234835066)
+[2024-09-13T13:40:35.109+0000] {spark_submit.py:579} INFO - (spark.master,spark://spark-master:7077)
+[2024-09-13T13:40:35.111+0000] {spark_submit.py:579} INFO - (spark.submit.deployMode,client)
+[2024-09-13T13:40:35.112+0000] {spark_submit.py:579} INFO - (spark.submit.pyFiles,)
+[2024-09-13T13:40:35.113+0000] {spark_submit.py:579} INFO - Classpath elements:
+[2024-09-13T13:40:35.114+0000] {spark_submit.py:579} INFO - 
+[2024-09-13T13:40:35.115+0000] {spark_submit.py:579} INFO - 
+[2024-09-13T13:40:35.116+0000] {spark_submit.py:579} INFO - 
+[2024-09-13T13:40:37.574+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:37 INFO SparkContext: Running Spark version 3.5.2
+[2024-09-13T13:40:37.578+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:37 INFO SparkContext: OS info Linux, 5.15.153.1-microsoft-standard-WSL2, amd64
+[2024-09-13T13:40:37.579+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:37 INFO SparkContext: Java version 17.0.12
+[2024-09-13T13:40:37.697+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:37 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2024-09-13T13:40:39.667+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:39 INFO ResourceUtils: ==============================================================
+[2024-09-13T13:40:39.669+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:39 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2024-09-13T13:40:39.670+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:39 INFO ResourceUtils: ==============================================================
+[2024-09-13T13:40:39.672+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:39 INFO SparkContext: Submitted application: SparkJob
+[2024-09-13T13:40:39.726+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:39 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2024-09-13T13:40:39.741+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:39 INFO ResourceProfile: Limiting resource is cpu
+[2024-09-13T13:40:39.743+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:39 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2024-09-13T13:40:39.901+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:39 INFO SecurityManager: Changing view acls to: ***
+[2024-09-13T13:40:39.902+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:39 INFO SecurityManager: Changing modify acls to: ***
+[2024-09-13T13:40:39.904+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:39 INFO SecurityManager: Changing view acls groups to:
+[2024-09-13T13:40:39.905+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:39 INFO SecurityManager: Changing modify acls groups to:
+[2024-09-13T13:40:39.906+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:39 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2024-09-13T13:40:40.895+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:40 INFO Utils: Successfully started service 'sparkDriver' on port 41317.
+[2024-09-13T13:40:40.992+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:40 INFO SparkEnv: Registering MapOutputTracker
+[2024-09-13T13:40:41.081+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:41 INFO SparkEnv: Registering BlockManagerMaster
+[2024-09-13T13:40:41.134+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:41 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2024-09-13T13:40:41.136+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:41 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2024-09-13T13:40:41.147+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:41 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2024-09-13T13:40:41.228+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:41 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-616b509b-136b-4bae-91d1-05c31df7963b
+[2024-09-13T13:40:41.269+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:41 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2024-09-13T13:40:41.331+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:41 INFO SparkEnv: Registering OutputCommitCoordinator
+[2024-09-13T13:40:41.654+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:41 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2024-09-13T13:40:41.835+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:41 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2024-09-13T13:40:42.046+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:42 INFO Executor: Starting executor ID driver on host abca638f616d
+[2024-09-13T13:40:42.047+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:42 INFO Executor: OS info Linux, 5.15.153.1-microsoft-standard-WSL2, amd64
+[2024-09-13T13:40:42.049+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:42 INFO Executor: Java version 17.0.12
+[2024-09-13T13:40:42.067+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:42 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2024-09-13T13:40:42.069+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:42 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@7432b5cc for default.
+[2024-09-13T13:40:42.114+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:42 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45757.
+[2024-09-13T13:40:42.115+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:42 INFO NettyBlockTransferService: Server created on abca638f616d:45757
+[2024-09-13T13:40:42.119+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:42 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2024-09-13T13:40:42.129+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:42 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, abca638f616d, 45757, None)
+[2024-09-13T13:40:42.137+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:42 INFO BlockManagerMasterEndpoint: Registering block manager abca638f616d:45757 with 434.4 MiB RAM, BlockManagerId(driver, abca638f616d, 45757, None)
+[2024-09-13T13:40:42.141+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:42 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, abca638f616d, 45757, None)
+[2024-09-13T13:40:42.143+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:42 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, abca638f616d, 45757, None)
+[2024-09-13T13:40:43.325+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:43 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2024-09-13T13:40:43.352+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:43 INFO SharedState: Warehouse path is 'file:/user/hive/warehouse'.
+[2024-09-13T13:40:47.041+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:47 INFO InMemoryFileIndex: It took 94 ms to list leaf files for 1 paths.
+[2024-09-13T13:40:49.712+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:49 INFO InMemoryFileIndex: It took 4 ms to list leaf files for 1 paths.
+[2024-09-13T13:40:50.118+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:50 INFO HiveConf: Found configuration file null
+[2024-09-13T13:40:50.141+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:50 INFO HiveUtils: Initializing HiveMetastoreConnection version 2.3.9 using Spark classes.
+[2024-09-13T13:40:50.872+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:50 INFO HiveClientImpl: Warehouse location for Hive client (version 2.3.9) is file:/user/hive/warehouse
+[2024-09-13T13:40:51.232+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:51 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+[2024-09-13T13:40:51.233+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:51 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+[2024-09-13T13:40:51.235+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:51 INFO HiveMetaStore: 0: Opening raw store with implementation class:org.apache.hadoop.hive.metastore.ObjectStore
+[2024-09-13T13:40:51.328+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:51 INFO ObjectStore: ObjectStore, initialize called
+[2024-09-13T13:40:51.626+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:51 INFO Persistence: Property hive.metastore.integral.jdo.pushdown unknown - will be ignored
+[2024-09-13T13:40:51.628+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:51 INFO Persistence: Property datanucleus.cache.level2 unknown - will be ignored
+[2024-09-13T13:40:54.931+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:54 INFO ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+[2024-09-13T13:40:58.877+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:58 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is DERBY
+[2024-09-13T13:40:58.881+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:58 INFO ObjectStore: Initialized ObjectStore
+[2024-09-13T13:40:59.011+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 2.3.0
+[2024-09-13T13:40:59.013+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 WARN ObjectStore: setMetaStoreSchemaVersion called but recording version is disabled: version = 2.3.0, comment = Set by MetaStore UNKNOWN@172.18.0.14
+[2024-09-13T13:40:59.153+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO HiveMetaStore: Added admin role in metastore
+[2024-09-13T13:40:59.156+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO HiveMetaStore: Added public role in metastore
+[2024-09-13T13:40:59.209+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO HiveMetaStore: No user is added in admin role, since config is empty
+[2024-09-13T13:40:59.437+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO HiveMetaStore: 0: get_database: default
+[2024-09-13T13:40:59.441+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO audit: ugi=***	ip=unknown-ip-addr	cmd=get_database: default
+[2024-09-13T13:40:59.452+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO HiveMetaStore: 0: get_database: default
+[2024-09-13T13:40:59.454+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO audit: ugi=***	ip=unknown-ip-addr	cmd=get_database: default
+[2024-09-13T13:40:59.460+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO HiveMetaStore: 0: get_table : db=default tbl=pc_makers
+[2024-09-13T13:40:59.462+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO audit: ugi=***	ip=unknown-ip-addr	cmd=get_table : db=default tbl=pc_makers
+[2024-09-13T13:40:59.517+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO HiveMetaStore: 0: get_database: default
+[2024-09-13T13:40:59.518+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO audit: ugi=***	ip=unknown-ip-addr	cmd=get_database: default
+[2024-09-13T13:40:59.523+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO HiveMetaStore: 0: get_database: default
+[2024-09-13T13:40:59.524+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO audit: ugi=***	ip=unknown-ip-addr	cmd=get_database: default
+[2024-09-13T13:40:59.559+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO HiveMetaStore: 0: get_database: default
+[2024-09-13T13:40:59.560+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO audit: ugi=***	ip=unknown-ip-addr	cmd=get_database: default
+[2024-09-13T13:40:59.567+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO HiveMetaStore: 0: get_table : db=default tbl=pc_makers
+[2024-09-13T13:40:59.568+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO audit: ugi=***	ip=unknown-ip-addr	cmd=get_table : db=default tbl=pc_makers
+[2024-09-13T13:40:59.572+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO HiveMetaStore: 0: get_database: default
+[2024-09-13T13:40:59.573+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO audit: ugi=***	ip=unknown-ip-addr	cmd=get_database: default
+[2024-09-13T13:40:59.764+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO SQLStdHiveAccessController: Created SQLStdHiveAccessController for session context : HiveAuthzSessionContext [sessionString=38d788d2-6d3f-4867-9228-55d9237456b3, clientType=HIVECLI]
+[2024-09-13T13:40:59.769+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 WARN SessionState: METASTORE_FILTER_HOOK will be ignored, since hive.security.authorization.manager is set to instance of HiveAuthorizerFactory.
+[2024-09-13T13:40:59.770+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO metastore: Mestastore configuration hive.metastore.filter.hook changed from org.apache.hadoop.hive.metastore.DefaultMetaStoreFilterHookImpl to org.apache.hadoop.hive.ql.security.authorization.plugin.AuthorizationMetaStoreFilterHook
+[2024-09-13T13:40:59.773+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO HiveMetaStore: 0: Cleaning up thread local RawStore...
+[2024-09-13T13:40:59.775+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO audit: ugi=***	ip=unknown-ip-addr	cmd=Cleaning up thread local RawStore...
+[2024-09-13T13:40:59.776+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO HiveMetaStore: 0: Done cleaning up thread local RawStore
+[2024-09-13T13:40:59.777+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO audit: ugi=***	ip=unknown-ip-addr	cmd=Done cleaning up thread local RawStore
+[2024-09-13T13:40:59.981+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO HiveMetaStore: 0: create_table: Table(tableName:pc_makers, dbName:default, owner:***, createTime:1726234849, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:maker, type:string, comment:null)], location:file:/user/hive/warehouse/pc_makers, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, parameters:{field.delim=,, serialization.format=,}), bucketCols:[], sortCols:[], parameters:{}, skewedInfo:SkewedInfo(skewedColNames:[], skewedColValues:[], skewedColValueLocationMaps:{})), partitionKeys:[], parameters:{spark.sql.sources.schema={"type":"struct","fields":[{"name":"maker","type":"string","nullable":true,"metadata":{}}]}, spark.sql.create.version=3.5.2}, viewOriginalText:null, viewExpandedText:null, tableType:MANAGED_TABLE, privileges:PrincipalPrivilegeSet(userPrivileges:{***=[PrivilegeGrantInfo(privilege:INSERT, createTime:-1, grantor:***, grantorType:USER, grantOption:true), PrivilegeGrantInfo(privilege:SELECT, createTime:-1, grantor:***, grantorType:USER, grantOption:true), PrivilegeGrantInfo(privilege:UPDATE, createTime:-1, grantor:***, grantorType:USER, grantOption:true), PrivilegeGrantInfo(privilege:DELETE, createTime:-1, grantor:***, grantorType:USER, grantOption:true)]}, groupPrivileges:null, rolePrivileges:null))
+[2024-09-13T13:40:59.983+0000] {spark_submit.py:579} INFO - 24/09/13 13:40:59 INFO audit: ugi=***	ip=unknown-ip-addr	cmd=create_table: Table(tableName:pc_makers, dbName:default, owner:***, createTime:1726234849, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:maker, type:string, comment:null)], location:file:/user/hive/warehouse/pc_makers, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, parameters:{field.delim=,, serialization.format=,}), bucketCols:[], sortCols:[], parameters:{}, skewedInfo:SkewedInfo(skewedColNames:[], skewedColValues:[], skewedColValueLocationMaps:{})), partitionKeys:[], parameters:{spark.sql.sources.schema={"type":"struct","fields":[{"name":"maker","type":"string","nullable":true,"metadata":{}}]}, spark.sql.create.version=3.5.2}, viewOriginalText:null, viewExpandedText:null, tableType:MANAGED_TABLE, privileges:PrincipalPrivilegeSet(userPrivileges:{***=[PrivilegeGrantInfo(privilege:INSERT, createTime:-1, grantor:***, grantorType:USER, grantOption:true), PrivilegeGrantInfo(privilege:SELECT, createTime:-1, grantor:***, grantorType:USER, grantOption:true), PrivilegeGrantInfo(privilege:UPDATE, createTime:-1, grantor:***, grantorType:USER, grantOption:true), PrivilegeGrantInfo(privilege:DELETE, createTime:-1, grantor:***, grantorType:USER, grantOption:true)]}, groupPrivileges:null, rolePrivileges:null))
+[2024-09-13T13:41:00.009+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 WARN HiveConf: HiveConf of name hive.internal.ss.authz.settings.applied.marker does not exist
+[2024-09-13T13:41:00.010+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+[2024-09-13T13:41:00.011+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+[2024-09-13T13:41:00.012+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 INFO HiveMetaStore: 0: Opening raw store with implementation class:org.apache.hadoop.hive.metastore.ObjectStore
+[2024-09-13T13:41:00.014+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 INFO ObjectStore: ObjectStore, initialize called
+[2024-09-13T13:41:00.023+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 INFO MetaStoreDirectSql: Using direct SQL, underlying DB is DERBY
+[2024-09-13T13:41:00.025+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 INFO ObjectStore: Initialized ObjectStore
+[2024-09-13T13:41:00.029+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 WARN HiveMetaStore: Location: file:/user/hive/warehouse/pc_makers specified for non-external table:pc_makers
+[2024-09-13T13:41:00.031+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 INFO FileUtils: Creating directory if it doesn't exist: file:/user/hive/warehouse/pc_makers
+[2024-09-13T13:41:00.714+0000] {spark_submit.py:579} INFO - Traceback (most recent call last):
+[2024-09-13T13:41:00.715+0000] {spark_submit.py:579} INFO - File "/opt/***/dags/spark_job.py", line 56, in <module>
+[2024-09-13T13:41:00.719+0000] {spark_submit.py:579} INFO - spark.sql("""
+[2024-09-13T13:41:00.720+0000] {spark_submit.py:579} INFO - File "/home/***/.local/lib/python3.12/site-packages/pyspark/sql/session.py", line 1631, in sql
+[2024-09-13T13:41:00.721+0000] {spark_submit.py:579} INFO - return DataFrame(self._jsparkSession.sql(sqlQuery, litArgs), self)
+[2024-09-13T13:41:00.722+0000] {spark_submit.py:579} INFO - ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2024-09-13T13:41:00.723+0000] {spark_submit.py:579} INFO - File "/home/***/.local/lib/python3.12/site-packages/py4j/java_gateway.py", line 1322, in __call__
+[2024-09-13T13:41:00.725+0000] {spark_submit.py:579} INFO - return_value = get_return_value(
+[2024-09-13T13:41:00.726+0000] {spark_submit.py:579} INFO - ^^^^^^^^^^^^^^^^^
+[2024-09-13T13:41:00.726+0000] {spark_submit.py:579} INFO - File "/home/***/.local/lib/python3.12/site-packages/pyspark/errors/exceptions/captured.py", line 185, in deco
+[2024-09-13T13:41:00.727+0000] {spark_submit.py:579} INFO - raise converted from None
+[2024-09-13T13:41:00.736+0000] {spark_submit.py:579} INFO - pyspark.errors.exceptions.captured.AnalysisException: org.apache.hadoop.hive.ql.metadata.HiveException: MetaException(message:file:/user/hive/warehouse/pc_makers is not a directory or unable to create one)
+[2024-09-13T13:41:00.858+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 INFO SparkContext: Invoking stop() from shutdown hook
+[2024-09-13T13:41:00.860+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2024-09-13T13:41:00.886+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 INFO SparkUI: Stopped Spark web UI at http://abca638f616d:4040
+[2024-09-13T13:41:00.923+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2024-09-13T13:41:00.966+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 INFO MemoryStore: MemoryStore cleared
+[2024-09-13T13:41:00.967+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 INFO BlockManager: BlockManager stopped
+[2024-09-13T13:41:00.991+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2024-09-13T13:41:00.999+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:00 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2024-09-13T13:41:01.021+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:01 INFO SparkContext: Successfully stopped SparkContext
+[2024-09-13T13:41:01.022+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:01 INFO ShutdownHookManager: Shutdown hook called
+[2024-09-13T13:41:01.023+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:01 INFO ShutdownHookManager: Deleting directory /tmp/spark-4d32104e-27f6-4137-8a15-6f1f16a63894/pyspark-d4eb60dc-ffa3-4905-a129-06d863a7f1e3
+[2024-09-13T13:41:01.037+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:01 INFO ShutdownHookManager: Deleting directory /tmp/spark-4d32104e-27f6-4137-8a15-6f1f16a63894
+[2024-09-13T13:41:01.052+0000] {spark_submit.py:579} INFO - 24/09/13 13:41:01 INFO ShutdownHookManager: Deleting directory /tmp/spark-b51665ad-f021-4811-aa98-a4b7ef41ec5a
+[2024-09-13T13:41:01.157+0000] {taskinstance.py:3310} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 174, in execute
+    self._hook.submit(self.application)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 505, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --name arrow-spark --verbose --deploy-mode client /opt/***/dags/spark_job.py. Error code is: 1.
+[2024-09-13T13:41:01.183+0000] {taskinstance.py:1225} INFO - Marking task as UP_FOR_RETRY. dag_id=spark_find_makers_dag, task_id=spark_submit_task, run_id=scheduled__2024-09-12T00:00:00+00:00, execution_date=20240912T000000, start_date=20240913T134028, end_date=20240913T134101
+[2024-09-13T13:41:01.226+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-13T13:41:01.227+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 645 for task spark_submit_task (Cannot execute: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --name arrow-spark --verbose --deploy-mode client /opt/***/dags/spark_job.py. Error code is: 1.; 1681)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 115, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3004, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 273, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3158, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3182, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 767, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 733, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 406, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 174, in execute
+    self._hook.submit(self.application)
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 505, in submit
+    raise AirflowException(
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark://spark-master:7077 --conf spark.master=spark://spark-master:7077 --name arrow-spark --verbose --deploy-mode client /opt/***/dags/spark_job.py. Error code is: 1.
+[2024-09-13T13:41:01.260+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2024-09-13T13:41:01.288+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-13T13:41:01.294+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
