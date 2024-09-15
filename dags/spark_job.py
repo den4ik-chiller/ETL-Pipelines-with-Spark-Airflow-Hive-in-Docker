@@ -51,17 +51,6 @@ class Product:
 p = Parameters()
 p.initTables(spark)
 
-# Создание таблицы в Hive
-# spark.sql("""
-#     CREATE TABLE IF NOT EXISTS pc_makers (
-#         maker STRING
-#     )
-    
-#     ROW FORMAT DELIMITED
-#     FIELDS TERMINATED BY ','
-#     STORED AS TEXTFILE;
-# """)
-
 # Ваш код
 final_table = spark.table("product").alias('p')\
                   .filter(col("p.type") == "PC")\
@@ -75,8 +64,6 @@ final_table = spark.table("product").alias('p')\
 print('Тип данной таблицы - ', type(final_table))
 print("Available tables:", spark.catalog.listTables())
 
-
-# spark.sql("CREATE DATABASE IF NOT EXISTS makers")
 
 # Запись результата в Hive без предварительного создания таблицы
 final_table.write.mode("overwrite").saveAsTable("pc_makers")
