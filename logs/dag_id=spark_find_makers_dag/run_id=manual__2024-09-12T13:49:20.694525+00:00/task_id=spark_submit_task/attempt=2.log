@@ -1,3 +1,0 @@
-[2024-09-12T17:00:31.575+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
-[2024-09-12T17:00:31.639+0000] {taskinstance.py:2602} INFO - Dependencies not met for <TaskInstance: spark_find_makers_dag.spark_submit_task manual__2024-09-12T13:49:20.694525+00:00 [skipped]>, dependency 'Task Instance State' FAILED: Task is in the 'skipped' state.
-[2024-09-12T17:00:31.649+0000] {local_task_job_runner.py:166} INFO - Task is not able to be run
