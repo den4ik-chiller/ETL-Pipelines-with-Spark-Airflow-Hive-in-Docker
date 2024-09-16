@@ -27,7 +27,7 @@ with DAG(
 
     air_data_analysis = SparkSubmitOperator(
         task_id='data_analysis',
-        application='/opt/airflow/dags/air_data_analysis.py', 
+        application='/opt/airflow/dags/airbnb_applications/air_data_analysis.py', 
         verbose=True,
         conn_id='spark_default',
         conf={"spark.master": "spark://spark-master:7077"}, 
@@ -35,7 +35,7 @@ with DAG(
 
     air_train_model = SparkSubmitOperator(
         task_id='train_model',
-        application='/opt/airflow/dags/air_train_model.py', 
+        application='/opt/airflow/dags/airbnb_applications/air_train_model.py', 
         verbose=True,
         conn_id='spark_default',
         conf={"spark.master": "spark://spark-master:7077"}, 
@@ -43,7 +43,7 @@ with DAG(
 
     air_pred_model = SparkSubmitOperator(
         task_id='pred_model',
-        application='/opt/airflow/dags/air_pred_model.py', 
+        application='/opt/airflow/dags/airbnb_applications/air_pred_model.py', 
         verbose=True,
         conn_id='spark_default',
         conf={"spark.master": "spark://spark-master:7077"}, 
