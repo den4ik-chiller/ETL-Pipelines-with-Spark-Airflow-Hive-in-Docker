@@ -2,6 +2,9 @@
 # Настройка для airflow https://yandex.cloud/ru/docs/data-proc/tutorials/airflow-automation#infra
 
 
+# dataproc-sa - editor, dataproc.agent
+# airflow-sa - dataproc.agent, storage.editor, editor
+
 from airflow import DAG, settings
 from airflow.models import Connection, Variable
 from airflow.utils.dates import days_ago
