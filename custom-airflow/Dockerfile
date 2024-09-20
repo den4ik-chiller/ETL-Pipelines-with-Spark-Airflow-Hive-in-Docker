@@ -38,5 +38,6 @@ USER airflow
 
 # Устанавливаем необходимые пакеты, включая провайдер для Spark
 RUN pip install apache-airflow-providers-apache-spark==4.10.0
+RUN pip install apache-airflow-providers-yandex==3.12.0
 COPY /datasets /opt/airflow/datasets
 
